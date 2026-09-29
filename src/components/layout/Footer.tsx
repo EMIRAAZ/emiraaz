@@ -1,11 +1,14 @@
 import Link from "next/link";
 import { footerNav, footerSectors, siteConfig } from "@/lib/site";
 import Container from "./Container";
+import FollowJourney from "./FollowJourney";
 import Logo from "./Logo";
 
 export default function Footer() {
   return (
     <footer className="bg-white pt-12 pb-8 md:pt-[74px] md:pb-11">
+      <FollowJourney />
+
       <Container className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between lg:gap-10">
         {/* Left: logo + sectors */}
         <div>

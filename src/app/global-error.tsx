@@ -7,7 +7,7 @@ export default function GlobalError({ retry }: { error: Error & { digest?: strin
   return (
     <html lang="en">
       <body className="flex min-h-screen items-center justify-center bg-white px-5 text-center text-black">
-        <title>Something went wrong | Emiraaz</title>
+        <title>Something went wrong | EMIRAAZ</title>
         <div>
           <p className="text-sm font-light uppercase tracking-[0.15em]">Something Went Wrong</p>
           <h1 className="mt-4 text-3xl font-bold tracking-[-0.02em] md:text-4xl">We couldn’t load the site</h1>
