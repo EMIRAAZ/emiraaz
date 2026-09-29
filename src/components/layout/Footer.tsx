@@ -10,10 +10,10 @@ export default function Footer() {
       <FollowJourney />
 
       <Container className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between lg:gap-10">
-        {/* Left: logo + sectors */}
-        <div>
+        {/* Left: logo + sectors (centered on mobile/tablet) */}
+        <div className="flex flex-col items-center lg:items-start">
           <Logo className="h-4 md:h-6" />
-          <ul className="mt-4 flex items-center md:mt-5">
+          <ul className="mt-4 flex items-center justify-center md:mt-5">
             {footerSectors.map((sector, i) => (
               <li
                 key={sector}
@@ -27,10 +27,10 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Right: links + copyright — separated by a rule on mobile, stacked right on desktop */}
-        <div className="flex flex-col gap-3 border-t border-black/10 pt-6 md:gap-5 lg:items-end lg:border-t-0 lg:pt-0.5">
+        {/* Right: links + copyright — centered under a rule on mobile, stacked right on desktop */}
+        <div className="flex flex-col items-center gap-3 border-t border-black/10 pt-6 text-center md:gap-5 lg:items-end lg:border-t-0 lg:pt-0.5 lg:text-right">
           <nav aria-label="Footer">
-            <ul className="flex flex-wrap gap-x-4 gap-y-2 sm:gap-x-6 md:gap-x-[31px]">
+            <ul className="flex flex-wrap justify-center gap-x-4 gap-y-2 sm:gap-x-6 md:gap-x-[31px] lg:justify-end">
               {footerNav.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className="text-[13px] text-black transition-opacity hover:opacity-60 md:text-[15px]">

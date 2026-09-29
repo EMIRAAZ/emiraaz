@@ -35,7 +35,7 @@ export default function AboutFounder() {
             <Eyebrow>Our Founder</Eyebrow>
             <h2 className={headingClass}>Ashiq Emiraaz</h2>
             <p className={bodyClass}>
-              Founder &amp; CRO of EMIRAAZ, with a vision to build innovative technology-driven
+              Founder &amp; CEO of EMIRAAZ, with a vision to build innovative technology-driven
               products that create real value, simplify lives, and shape a smarter future.
             </p>
             <div className="mt-6">
