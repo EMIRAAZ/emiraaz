@@ -3,7 +3,7 @@ export const siteConfig = {
   name: "EMIRAAZ",
   domain: "emiraaz.com",
   url: "https://www.emiraaz.com",
-  tagline: "Technology. Real Estate. Tourism",
+  tagline: "Technology. Real Estate. Tourism.",
   description:
     "EMIRAAZ is a technology-driven company building innovative products in real estate and tourism, shaping a smarter and more connected future.",
   founder: "Ashiq Emiraaz",
