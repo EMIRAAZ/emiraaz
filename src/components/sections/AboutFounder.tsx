@@ -23,7 +23,7 @@ export default function AboutFounder() {
             <p className={bodyClass}>
               EMIRAAZ is a forward-thinking company specializing in technology, real estate and
               tourism. We build and operate innovative platforms that simplify experiences, create
-              opportunities, and connect people
+              opportunities, and connect people.
             </p>
             <div className="mt-6">
               <PillLink href="/explore">Learn More</PillLink>
