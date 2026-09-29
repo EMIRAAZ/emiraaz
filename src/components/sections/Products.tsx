@@ -2,6 +2,14 @@ import Image from "next/image";
 import Container from "@/components/layout/Container";
 import { products, type Product } from "@/data/products";
 
+// Literal class names so Tailwind generates them.
+const desktopOrderClass: Record<Product["desktopOrder"], string> = {
+  1: "lg:order-1",
+  2: "lg:order-2",
+  3: "lg:order-3",
+  4: "lg:order-4",
+};
+
 function ProductCard({ product }: { product: Product }) {
   const external = product.href.startsWith("http");
 
@@ -9,7 +17,7 @@ function ProductCard({ product }: { product: Product }) {
     <a
       href={product.href}
       {...(external && { target: "_blank", rel: "noopener noreferrer" })}
-      className="group flex flex-col items-center text-center"
+      className={`group flex flex-col items-center text-center ${desktopOrderClass[product.desktopOrder]}`}
     >
       <Image
         src={product.icon}
