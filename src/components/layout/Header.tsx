@@ -15,7 +15,7 @@ export default function Header() {
 
   return (
     <header className="relative z-50 bg-white">
-      <Container className="flex h-14 items-center justify-between md:h-20 lg:h-[88px]">
+      <Container className="flex h-[52px] items-center justify-between md:h-16 lg:h-[72px]">
         <Logo priority />
 
         {/* Desktop nav */}
@@ -53,6 +53,12 @@ export default function Header() {
           </svg>
         </button>
       </Container>
+
+      {/* Mobile: hairline that fades out toward both edges */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-black/20 to-transparent lg:hidden"
+      />
 
       {/* Mobile nav */}
       <nav

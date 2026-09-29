@@ -7,7 +7,7 @@ type LogoProps = {
   priority?: boolean;
 };
 
-export default function Logo({ className = "h-[18px] md:h-6 lg:h-[30px]", priority = false }: LogoProps) {
+export default function Logo({ className = "h-4 md:h-5 lg:h-6", priority = false }: LogoProps) {
   return (
     <Link href="/" aria-label={`${siteConfig.name} home`} className="inline-flex shrink-0">
       <Image
