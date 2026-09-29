@@ -31,7 +31,7 @@ export default function AboutFounder() {
               opportunities, and connect people.
             </p>
             <div className={actionClass}>
-              <PillLink href="/explore">Learn More</PillLink>
+              <PillLink href="/about">Learn More</PillLink>
             </div>
           </div>
 

@@ -8,6 +8,7 @@ export const siteConfig = {
   description:
     "EMIRAAZ is a technology-driven company building innovative products in real estate and tourism, shaping a smarter and more connected future.",
   founder: "Ashiq Emiraaz",
+  email: "hello@emiraaz.com",
   logo: {
     src: "/emiraaz-logo.png",
     width: 813,
@@ -20,19 +21,20 @@ export type NavLink = {
   href: string;
 };
 
+// Only pages that exist. Add a page here once it's built.
 export const mainNav: NavLink[] = [
-  { label: "Explore Emiraaz", href: "/explore" },
-  { label: "Technology", href: "/technology" },
-  { label: "Real Estate", href: "/real-estate" },
+  { label: "About", href: "/about" },
+  { label: "Our Platforms", href: "/platforms" },
   { label: "Founder", href: "/founder" },
-  { label: "Media", href: "/media" },
+  { label: "Partners", href: "/partners" },
+  { label: "Blogs", href: "/blogs" },
   { label: "Contact", href: "/contact" },
 ];
 
 export const footerNav: NavLink[] = [
   { label: "Home", href: "/" },
   { label: "Our Platforms", href: "/#platforms" },
-  { label: "About", href: "/explore" },
+  { label: "About", href: "/about" },
   { label: "Founder", href: "/founder" },
   { label: "Contact", href: "/contact" },
 ];
