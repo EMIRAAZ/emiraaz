@@ -2,6 +2,7 @@
 export const siteConfig = {
   name: "EMIRAAZ",
   domain: "emiraaz.com",
+  foundedYear: 2019,
   url: "https://www.emiraaz.com",
   tagline: "Technology. Real Estate. Tourism.",
   description:

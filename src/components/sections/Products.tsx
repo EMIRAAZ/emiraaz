@@ -22,26 +22,26 @@ function ProductCard({ product }: { product: Product }) {
       <Image
         src={product.icon}
         alt={`${product.name} logo`}
-        width={200}
-        height={200}
-        className="size-[104px] transition-transform duration-300 group-hover:-translate-y-1 md:size-[160px] lg:size-[198px]"
+        width={160}
+        height={160}
+        className="size-[104px] transition-transform duration-300 group-hover:-translate-y-1 md:size-[128px] lg:size-[144px]"
       />
 
-      <h3 className="mt-4 text-lg font-semibold tracking-[-0.01em] text-black md:mt-8 md:text-[26px] lg:mt-10">
+      <h3 className="mt-4 whitespace-nowrap text-[clamp(15px,4.6vw,18px)] font-semibold tracking-[-0.01em] text-black md:mt-6 md:text-[22px] lg:mt-7">
         {product.name}
       </h3>
 
-      <p className="mt-1 text-[15px] font-light leading-[1.15] text-black md:mt-5 md:leading-[1.2] md:text-[21px] lg:text-2xl">
+      {/* One line on mobile ("Real Estate Platform"), two lines from md up as in the design. */}
+      <p className="mt-1 whitespace-nowrap text-[clamp(12px,3.7vw,15px)] font-light leading-[1.15] text-black md:mt-3 md:whitespace-normal md:leading-[1.25] md:text-lg lg:text-xl">
         {product.tagline[0]}
-        <br />
-        {product.tagline[1]}
+        <br className="hidden md:block" /> {product.tagline[1]}
       </p>
 
       <span
         aria-hidden
-        className="mt-3 inline-flex size-8 md:mt-4 md:size-10 lg:size-12 items-center justify-center rounded-full border-[1.5px] border-black text-black transition-colors group-hover:bg-black group-hover:text-white"
+        className="mt-3 inline-flex size-8 md:mt-4 md:size-10 items-center justify-center rounded-full border-[1.5px] border-black text-black transition-colors group-hover:bg-black group-hover:text-white"
       >
-        <svg width="16" height="16" className="lg:size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M9 5l7 7-7 7" />
         </svg>
       </span>

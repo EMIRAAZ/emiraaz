@@ -3,7 +3,7 @@ import Link from "next/link";
 type Variant = "solid" | "outline";
 
 const baseClass =
-  "inline-flex h-11 cursor-pointer items-center gap-3 rounded-full border-[1.5px] px-5 text-base font-semibold transition-colors lg:h-12 lg:gap-4 lg:px-6 lg:text-xl";
+  "inline-flex h-11 cursor-pointer items-center gap-3 rounded-full border-[1.5px] px-5 text-base font-semibold transition-colors lg:px-6 lg:text-[17px]";
 
 const variants: Record<Variant, string> = {
   solid: "border-black bg-black text-white hover:bg-black/80",
@@ -22,7 +22,7 @@ function ArrowIcon() {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="size-5 lg:size-6"
+      className="size-5"
     >
       <path d="M4 12h16M14 6l6 6-6 6" />
     </svg>
