@@ -14,16 +14,16 @@ export const products: Product[] = [
     href: "https://propertyseller.com",
   },
   {
-    name: "PS AGENT",
-    tagline: ["Agent", "Application"],
-    icon: "/products/ps-agent.webp",
-    href: "#",
-  },
-  {
     name: "HolidayInDubai",
     tagline: ["Tourism", "Platform"],
     icon: "/products/holidayindubai.webp",
-    href: "#",
+    href: "https://holidayindubai.com/",
+  },
+  {
+    name: "PS AGENT",
+    tagline: ["Agent", "Application"],
+    icon: "/products/ps-agent.webp",
+    href: "https://apps.apple.com/us/app/ps-agent/id6741741558",
   },
   {
     name: "HID PARTNER",
