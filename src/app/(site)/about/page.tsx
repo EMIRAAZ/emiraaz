@@ -31,7 +31,7 @@ export default function AboutPage() {
       <Container>
         <div className="mx-auto max-w-[1040px]">
           {/* 01 — intro */}
-          <div className="flex gap-10 pb-10 md:pb-12">
+          <div className="relative flex gap-10 pb-10 md:pb-12">
             <div className="max-w-[640px] flex-1">
               <div className="flex items-center gap-3">
                 <Label>{aboutIntro.eyebrow}</Label>
@@ -45,6 +45,14 @@ export default function AboutPage() {
                 {aboutIntro.text}
               </p>
             </div>
+
+            {/* Large faint "01" — mobile & tablet */}
+            <span
+              aria-hidden
+              className="pointer-events-none absolute right-0 -top-1 select-none text-[64px] font-extralight leading-none tracking-[-0.04em] text-[#E3E7F7] sm:text-[88px] lg:hidden"
+            >
+              01
+            </span>
 
             {/* Large faint "01" — desktop only */}
             <div className="relative hidden w-[240px] shrink-0 justify-end pl-10 lg:flex">
