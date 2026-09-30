@@ -1,6 +1,6 @@
 import type { SocialLink } from "@/lib/site";
 
-/** Brand glyphs for the social links (Instagram, LinkedIn, YouTube). */
+/** Outline brand glyphs for the social links (Instagram, LinkedIn, YouTube) — same 2px stroke style. */
 export default function SocialIcon({
   icon,
   className = "size-6",
@@ -21,21 +21,18 @@ export default function SocialIcon({
       );
     case "linkedin":
       return (
-        <svg {...common}>
-          <rect x="2" y="2" width="20" height="20" rx="3" fill="currentColor" />
-          <circle cx="7.5" cy="7.6" r="1.6" fill="white" />
-          <rect x="6.1" y="10" width="2.8" height="8" fill="white" />
-          <path
-            d="M11 10h2.7v1.2c.5-.8 1.5-1.4 2.8-1.4 2.3 0 3.2 1.5 3.2 3.8V18h-2.8v-4c0-1-.3-1.8-1.3-1.8s-1.6.8-1.6 1.8v4H11z"
-            fill="white"
-          />
+        <svg {...common} fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="5" />
+          <path d="M8 11v5.5" />
+          <circle cx="8" cy="7.8" r="1" fill="currentColor" stroke="none" />
+          <path d="M12 16.5V11M12 13.6c0-1.6 1-2.6 2.3-2.6s2.2.9 2.2 2.6v2.9" />
         </svg>
       );
     case "youtube":
       return (
-        <svg {...common}>
-          <rect x="1.5" y="4.5" width="21" height="15" rx="4.5" fill="currentColor" />
-          <path d="M10 8.8v6.4l5.4-3.2z" fill="white" />
+        <svg {...common} fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round">
+          <rect x="2.5" y="5" width="19" height="14" rx="5" />
+          <path d="M10.2 9.4v5.2l4.4-2.6z" />
         </svg>
       );
   }

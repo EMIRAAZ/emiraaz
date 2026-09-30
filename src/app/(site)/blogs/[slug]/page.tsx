@@ -67,7 +67,7 @@ export default async function BlogDetailPage(props: PageProps<"/blogs/[slug]">) 
       <Container>
         {/* Header — same width as the article column */}
         <header className="mx-auto max-w-[640px]">
-          <p className="text-[13px] font-semibold uppercase tracking-[0.04em] text-accent">
+          <p className="text-[13px] font-semibold uppercase tracking-[0.04em] text-black">
             Insights /{" "}
             <Link href="/blogs" className="hover:underline">
               Blog
@@ -81,13 +81,13 @@ export default async function BlogDetailPage(props: PageProps<"/blogs/[slug]">) 
           <div className="mt-5 flex flex-col gap-4 md:mt-6 sm:flex-row sm:items-end sm:justify-between sm:gap-8">
             <div className="text-[13px] leading-[1.6] text-black/80 md:text-sm">
               <p>
-                By <span className="font-medium text-accent">{author.name}</span>
+                By <span className="font-medium text-black">{author.name}</span>
                 {author.bio && <>. {author.bio}</>}
               </p>
               <p className="mt-2 flex items-center gap-1.5">
                 <span className="font-semibold text-black">Reviewed By:</span>
-                <span className="text-accent">{reviewer.name}</span>
-                <svg aria-label="Verified" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="text-accent">
+                <span className="text-black">{reviewer.name}</span>
+                <svg aria-label="Verified" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="text-black">
                   <path d="M12 2.5l2.4 1.8 3-.2.9 2.9 2.5 1.7-1 2.8 1 2.8-2.5 1.7-.9 2.9-3-.2L12 21.5l-2.4-1.8-3 .2-.9-2.9-2.5-1.7 1-2.8-1-2.8 2.5-1.7.9-2.9 3 .2z" />
                   <path d="M8.5 12l2.3 2.3 4.7-4.6" />
                 </svg>

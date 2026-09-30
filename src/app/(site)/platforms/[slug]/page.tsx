@@ -49,7 +49,7 @@ export default async function PlatformDetailPage(props: PageProps<"/platforms/[s
           Our Platforms
         </Link>
 
-        <article className="mt-5 rounded-2xl border border-black/10 p-5 md:mt-6 md:p-6">
+        <article className="mt-5 border-0 p-0 sm:rounded-2xl sm:border sm:border-black/10 sm:p-6 md:mt-6">
           <div className="flex flex-col gap-5 md:flex-row md:gap-7">
             <div className="flex items-center gap-4 md:block">
               <Image
@@ -110,7 +110,7 @@ export default async function PlatformDetailPage(props: PageProps<"/platforms/[s
           </div>
 
           {product.features && product.features.length > 0 && (
-            <div className="mt-6 grid gap-3.5 sm:grid-cols-2 md:mt-8 lg:grid-cols-4">
+            <div className="mt-6 grid grid-cols-2 gap-3 sm:gap-4 md:mt-8 lg:grid-cols-4">
               {product.features.map((feature) => (
                 <FeatureTile key={feature.title} feature={feature} />
               ))}

@@ -17,7 +17,7 @@ function Icon({ icon }: { icon: FeatureIcon }) {
     strokeWidth: 1.8,
     strokeLinecap: "round" as const,
     strokeLinejoin: "round" as const,
-    className: "size-6",
+    className: "size-5 sm:size-6",
   };
   switch (icon) {
     case "home":
@@ -54,12 +54,18 @@ function Icon({ icon }: { icon: FeatureIcon }) {
 export default function FeatureTile({ feature }: { feature: PlatformFeature }) {
   const tone = toneClass[feature.tone];
   return (
-    <div className={`rounded-lg p-5 ${tone.tile}`}>
-      <div className={`flex size-12 items-center justify-center rounded-full ${tone.badge}`}>
-        <Icon icon={feature.icon} />
+    <div className={`flex flex-col justify-between rounded-xl p-3 sm:rounded-2xl sm:p-5 ${tone.tile}`}>
+      <div>
+        <div className={`flex size-9 items-center justify-center rounded-full sm:size-12 ${tone.badge}`}>
+          <Icon icon={feature.icon} />
+        </div>
+        <h3 className="mt-2.5 text-sm font-semibold tracking-[-0.01em] leading-[1.3] text-black sm:mt-4 sm:text-[17px]">
+          {feature.title}
+        </h3>
+        <p className="mt-1 text-[11px] font-light leading-[1.4] text-black/60 sm:mt-1.5 sm:text-[13px] sm:leading-[1.5]">
+          {feature.description}
+        </p>
       </div>
-      <h3 className="mt-4 text-base font-semibold tracking-[-0.01em] text-black md:text-[17px]">{feature.title}</h3>
-      <p className="mt-1.5 text-[13px] font-light leading-[1.5] text-black/60">{feature.description}</p>
     </div>
   );
 }

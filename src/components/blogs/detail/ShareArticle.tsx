@@ -34,8 +34,8 @@ export default function ShareArticle({ url, title }: { url: string; title: strin
       label: "Share on Facebook",
       href: `https://www.facebook.com/sharer/sharer.php?u=${u}`,
       icon: (
-        <svg aria-hidden width="22" height="22" viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="10" fill="#1877F2" />
+        <svg aria-hidden width="22" height="22" viewBox="0 0 24 24" className="text-black">
+          <circle cx="12" cy="12" r="10" fill="currentColor" />
           <path fill="#fff" d="M13.4 21.9v-7h2.3l.4-2.7h-2.7v-1.7c0-.8.2-1.3 1.3-1.3h1.4V6.8c-.2 0-1.1-.1-2-.1-2 0-3.4 1.2-3.4 3.5v2h-2.3v2.7h2.3v7a10 10 0 0 0 2.7 0z" />
         </svg>
       ),
@@ -44,7 +44,7 @@ export default function ShareArticle({ url, title }: { url: string; title: strin
       label: "Share on LinkedIn",
       href: `https://www.linkedin.com/sharing/share-offsite/?url=${u}`,
       icon: (
-        <svg aria-hidden width="20" height="20" viewBox="0 0 24 24" fill="#0A66C2">
+        <svg aria-hidden width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="text-black">
           <circle cx="5" cy="5" r="2.2" />
           <rect x="3" y="8.5" width="4" height="12.5" rx="0.5" />
           <path d="M10 8.5h3.8v1.8c.6-1.1 2-2.1 4-2.1 3.2 0 4.2 2 4.2 5.2V21h-4v-6.7c0-1.6-.3-2.8-1.9-2.8s-2.1 1.2-2.1 2.8V21h-4z" />

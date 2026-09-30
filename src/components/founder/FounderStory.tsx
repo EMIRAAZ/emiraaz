@@ -1,5 +1,4 @@
 import Container from "@/components/layout/Container";
-import FollowUs from "@/components/ui/FollowUs";
 import { founderQuote, founderStory } from "@/data/founder";
 import { siteConfig } from "@/lib/site";
 
@@ -54,10 +53,6 @@ export default function FounderStory() {
               {siteConfig.founder}
             </figcaption>
           </figure>
-
-          <div className="mt-12 md:mt-14">
-            <FollowUs />
-          </div>
         </div>
       </Container>
     </section>

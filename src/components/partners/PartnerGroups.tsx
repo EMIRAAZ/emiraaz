@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Container from "@/components/layout/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import { partnerGroups, type Partner, type PartnerGroup } from "@/data/partners";
+import { PartnerLogo } from "@/components/partners/PartnerLogo";
 
 function GroupIcon({ id }: { id: PartnerGroup["id"] }) {
   const common = {
@@ -43,30 +43,15 @@ function GroupIcon({ id }: { id: PartnerGroup["id"] }) {
   }
 }
 
-function initials(text: string) {
-  return text
-    .split(/[\s&]+/)
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((w) => w[0]!.toUpperCase())
-    .join("");
-}
-
 function PartnerTile({ partner }: { partner: Partner }) {
   return (
-    <li className="flex flex-col items-center rounded-md bg-white px-3 py-5 text-center">
-      {partner.logo ? (
-        <Image src={partner.logo} alt={`${partner.name} logo`} width={96} height={40} className="h-9 w-auto object-contain" />
-      ) : (
-        <span
-          aria-hidden
-          className="flex size-9 items-center justify-center rounded-lg bg-[#EEF1F8] text-[11px] font-semibold tracking-[0.04em] text-black/55"
-        >
-          {initials(partner.category)}
-        </span>
-      )}
-      <p className="mt-3 text-[13px] font-semibold text-black">{partner.name}</p>
-      <p className="mt-0.5 text-[11px] font-light text-black/50">{partner.category}</p>
+    <li
+      className="flex h-12 items-center justify-center p-1 sm:h-16 sm:p-2"
+      title={`${partner.name} - ${partner.category}`}
+    >
+      <div className="flex h-full w-full items-center justify-center opacity-40 transition-all duration-300 hover:opacity-100 hover:scale-105 active:opacity-100">
+        <PartnerLogo name={partner.name} />
+      </div>
     </li>
   );
 }
@@ -75,34 +60,46 @@ export default function PartnerGroups() {
   return (
     <section className="pt-10 md:pt-14">
       <Container>
-        <div className="mx-auto flex max-w-[1080px] flex-col gap-4 md:gap-5">
-          {partnerGroups.map((group) => (
-            <div key={group.id} className="rounded-lg bg-[#F7F8FC] p-4 md:p-6" aria-labelledby={`partners-${group.id}`}>
-              <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between lg:gap-10">
-                <div className="flex items-center gap-3 md:gap-4">
-                  <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#E3ECFA] text-accent md:size-14">
-                    <GroupIcon id={group.id} />
+        <div className="mx-auto flex max-w-[1080px] flex-col gap-8 sm:gap-5">
+          {partnerGroups.map((group, groupIndex) => (
+            <div key={group.id}>
+              <div
+                className="bg-transparent p-0 sm:rounded-2xl sm:bg-[#F7F8FC] sm:p-6 md:p-8"
+                aria-labelledby={`partners-${group.id}`}
+              >
+                <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between lg:gap-10">
+                  <div className="flex items-center gap-3 md:gap-4">
+                    <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#F1F4FA] text-black md:size-14">
+                      <GroupIcon id={group.id} />
+                    </div>
+                    <div>
+                      <p className="text-[11px] uppercase tracking-[0.08em] text-black/55 md:text-xs">{group.eyebrow}</p>
+                      <h2
+                        id={`partners-${group.id}`}
+                        className="mt-0.5 text-lg font-bold tracking-[-0.02em] text-black md:text-[22px]"
+                      >
+                        {group.title}
+                      </h2>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-[11px] uppercase tracking-[0.08em] text-black/55 md:text-xs">{group.eyebrow}</p>
-                    <h2
-                      id={`partners-${group.id}`}
-                      className="mt-0.5 text-lg font-bold tracking-[-0.02em] text-black md:text-[22px]"
-                    >
-                      {group.title}
-                    </h2>
-                  </div>
+                  <p className="text-sm font-light leading-[1.55] text-black/70 lg:max-w-[400px] lg:pt-1 lg:text-[15px]">
+                    {group.description}
+                  </p>
                 </div>
-                <p className="text-sm font-light leading-[1.55] text-black/70 lg:max-w-[400px] lg:pt-1 lg:text-[15px]">
-                  {group.description}
-                </p>
+
+                <ul className="mt-6 grid grid-cols-3 items-center gap-x-3 gap-y-4 sm:gap-6 md:grid-cols-5 lg:grid-cols-6">
+                  {group.partners.map((partner, i) => (
+                    <PartnerTile key={`${group.id}-partner-${i}`} partner={partner} />
+                  ))}
+                </ul>
               </div>
 
-              <ul className="mt-5 grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:mt-6 md:gap-3 lg:grid-cols-5">
-                {group.partners.map((partner, i) => (
-                  <PartnerTile key={`${partner.name}-${i}`} partner={partner} />
-                ))}
-              </ul>
+              {groupIndex < partnerGroups.length - 1 && (
+                <div
+                  aria-hidden
+                  className="mt-8 h-px w-full bg-linear-to-r from-transparent via-black/15 to-transparent sm:hidden"
+                />
+              )}
             </div>
           ))}
 

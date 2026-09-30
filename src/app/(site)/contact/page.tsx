@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import EmailCard from "@/components/contact/EmailCard";
 import Container from "@/components/layout/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
-import FollowUs from "@/components/ui/FollowUs";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -31,10 +30,6 @@ export default function ContactPage() {
 
         <div className="mt-8 flex w-full justify-center md:mt-10">
           <EmailCard email={siteConfig.email} />
-        </div>
-
-        <div className="mt-12 w-full md:mt-14">
-          <FollowUs />
         </div>
       </Container>
     </section>

@@ -19,7 +19,7 @@ export default function PlatformsPage() {
         {/* Label with a trailing hairline */}
         <div className="flex items-center gap-4">
           <Eyebrow className="shrink-0">Our Platforms</Eyebrow>
-          <div aria-hidden className="h-px w-24 bg-linear-to-r from-black/40 to-transparent md:w-44" />
+          <div aria-hidden className="hidden h-px w-24 bg-linear-to-r from-black/40 to-transparent sm:block md:w-44" />
         </div>
 
         <h1 className="mt-3 text-[clamp(28px,8vw,36px)] font-bold leading-[1.15] tracking-[-0.02em] text-black md:mt-4 md:text-[44px] lg:text-[48px]">
@@ -32,14 +32,14 @@ export default function PlatformsPage() {
         </p>
 
         {/* Platforms — 1 column on phones, 2 from tablet up */}
-        <div className="mt-8 grid gap-3.5 md:mt-10 md:grid-cols-2">
+        <div className="mt-8 grid gap-4 md:mt-10 md:grid-cols-2 md:gap-5 lg:gap-6">
           {products.map((product) => (
             <PlatformCard key={product.name} product={product} />
           ))}
         </div>
 
         {/* Vision */}
-        <div className="mt-3.5 rounded-lg bg-[#F1F4FA] px-5 py-10 text-center md:px-10 md:py-12">
+        <div className="mt-6 rounded-2xl bg-[#F1F4FA] px-5 py-10 text-center md:mt-8 md:px-10 md:py-12 lg:mt-10">
           <Eyebrow>Our Vision</Eyebrow>
           <h2 className="mt-3 text-[22px] font-bold leading-[1.25] tracking-[-0.02em] text-black md:mt-4 md:text-[28px]">
             Building a Smarter and More Connected Future.

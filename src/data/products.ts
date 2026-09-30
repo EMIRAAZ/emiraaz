@@ -48,26 +48,26 @@ export const products: Product[] = [
       "A real estate sales platform focused on helping buyers discover properties and connect with the right opportunities. PropertySeller offers a wide range of properties including off-plan projects, off-plan resale, secondary properties, and land across all emirates.",
     features: [
       {
-        title: "Wide Property Selection",
-        description: "Explore off-plan, off-plan resale, secondary properties, and land across all emirates.",
+        title: "Wide Selection",
+        description: "Off-plan, secondary homes, and land across the UAE.",
         icon: "home",
         tone: "blue",
       },
       {
         title: "Verified Listings",
-        description: "Accurate and up-to-date property information from trusted developers and sources.",
+        description: "Accurate, vetted properties from trusted developers.",
         icon: "shield",
         tone: "green",
       },
       {
-        title: "Right Opportunities",
-        description: "Helps buyers discover the right properties based on their needs and preferences.",
+        title: "Right Match",
+        description: "Curated options matching your goals and budget.",
         icon: "check",
         tone: "orange",
       },
       {
         title: "All Emirates",
-        description: "Properties and projects from Dubai and across the UAE in one platform.",
+        description: "Top projects across Dubai and all seven emirates.",
         icon: "pin",
         tone: "purple",
       },
