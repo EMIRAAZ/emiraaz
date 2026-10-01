@@ -3,7 +3,7 @@ export const aboutIntro = {
   eyebrow: "About Us",
   titleBold: "Ideas Today,",
   titleLight: "A Better Tomorrow.",
-  text: "EMIRAAZ is a forward-thinking group built on the belief that ideas, technology, and opportunities can create a more connected and progressive world. We are committed to building businesses, creating value, and contributing to a brighter future for people, communities, and industries.",
+  text: "EMIRAAZ is a forward-thinking company built on the belief that ideas, technology, and opportunities can create a more connected and progressive world. Founded in 2019 and headquartered in Dubai, United Arab Emirates, we are committed to building businesses, creating value, and contributing to a brighter future for people, communities, and industries.",
 };
 
 export type AboutChapter = {

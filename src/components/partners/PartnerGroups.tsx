@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Container from "@/components/layout/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import { partnerGroups, type Partner, type PartnerGroup } from "@/data/partners";
@@ -43,6 +44,49 @@ function GroupIcon({ id }: { id: PartnerGroup["id"] }) {
   }
 }
 
+function initials(name: string) {
+  return name
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((w) => w[0]!.toUpperCase())
+    .join("");
+}
+
+/** Real partner: white tile with logo, name and category (initials badge until a logo file is added). */
+function NamedPartnerTile({ partner }: { partner: Partner }) {
+  return (
+    <li className="flex flex-col items-center rounded-lg border border-black/[0.07] bg-white px-2 py-5 text-center sm:border-transparent sm:shadow-[0_1px_8px_rgba(0,0,0,0.03)] md:px-3 md:py-6">
+      <div className="flex h-10 items-center justify-center md:h-12">
+        {partner.logo ? (
+          <Image
+            src={partner.logo}
+            alt={`${partner.name} logo`}
+            width={160}
+            height={48}
+            className={
+              // SVG icons have no intrinsic size: give them a fixed height. Raster wordmarks shrink to fit the tile.
+              partner.logo.endsWith(".svg")
+                ? "h-9 w-auto md:h-11"
+                : "h-auto max-h-9 w-auto max-w-[85%] object-contain md:max-h-11"
+            }
+          />
+        ) : (
+          <span
+            aria-hidden
+            className="flex size-10 items-center justify-center rounded-lg bg-[#EEF1F8] text-xs font-semibold tracking-[0.04em] text-black/55 md:size-11"
+          >
+            {initials(partner.name)}
+          </span>
+        )}
+      </div>
+      <p className="mt-3 text-[13px] font-semibold leading-[1.3] text-black md:text-sm">{partner.name}</p>
+      <p className="mt-0.5 text-[11px] font-light leading-[1.35] text-black/50 md:text-xs">{partner.category}</p>
+    </li>
+  );
+}
+
+/** Placeholder partner: logo-only EMIRAAZ tile. */
 function PartnerTile({ partner }: { partner: Partner }) {
   return (
     <li
@@ -87,11 +131,19 @@ export default function PartnerGroups() {
                   </p>
                 </div>
 
-                <ul className="mt-6 grid grid-cols-3 items-center gap-x-3 gap-y-4 sm:gap-6 md:grid-cols-5 lg:grid-cols-6">
-                  {group.partners.map((partner, i) => (
-                    <PartnerTile key={`${group.id}-partner-${i}`} partner={partner} />
-                  ))}
-                </ul>
+                {group.partners.every((p) => p.placeholder) ? (
+                  <ul className="mt-6 grid grid-cols-3 items-center gap-x-3 gap-y-4 sm:gap-6 md:grid-cols-5 lg:grid-cols-6">
+                    {group.partners.map((partner, i) => (
+                      <PartnerTile key={`${group.id}-partner-${i}`} partner={partner} />
+                    ))}
+                  </ul>
+                ) : (
+                  <ul className="mt-6 grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:gap-3 lg:grid-cols-5">
+                    {group.partners.map((partner) => (
+                      <NamedPartnerTile key={`${group.id}-${partner.name}`} partner={partner} />
+                    ))}
+                  </ul>
+                )}
               </div>
 
               {groupIndex < partnerGroups.length - 1 && (

@@ -24,7 +24,7 @@ export type NavLink = {
 // Only pages that exist. Add a page here once it's built.
 export const mainNav: NavLink[] = [
   { label: "About", href: "/about" },
-  { label: "Our Platforms", href: "/platforms" },
+  { label: "Platforms", href: "/platforms" },
   { label: "Founder", href: "/founder" },
   { label: "Partners", href: "/partners" },
   { label: "Blogs", href: "/blogs" },
