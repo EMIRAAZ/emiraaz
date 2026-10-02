@@ -1,11 +1,18 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import { siteConfig, socialLinks } from "@/lib/site";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
+// SF Pro Display: only Regular, Medium and Bold are bundled, so each file covers a weight range
+// (light text uses Regular, semibold and heavier use Bold) instead of the browser faking weights.
+const sfProDisplay = localFont({
+  variable: "--font-sf-pro",
+  display: "swap",
+  src: [
+    { path: "./fonts/SFProDisplay-Regular.woff2", weight: "100 400", style: "normal" },
+    { path: "./fonts/SFProDisplay-Medium.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/SFProDisplay-Bold.woff2", weight: "600 900", style: "normal" },
+  ],
 });
 
 const defaultTitle = `${siteConfig.name} | ${siteConfig.tagline}`;
@@ -70,7 +77,7 @@ const organizationJsonLd = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased`}>
+    <html lang="en" className={`${sfProDisplay.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
         <script
           type="application/ld+json"
