@@ -39,7 +39,7 @@ export default function PlatformsPage() {
         </div>
 
         {/* Vision */}
-        <div className="mt-6 rounded-2xl bg-[#F1F4FA] px-5 py-10 text-center md:mt-8 md:px-10 md:py-12 lg:mt-10">
+        <div className="mt-6 rounded-lg bg-[#F1F4FA] px-5 py-10 text-center md:mt-8 md:px-10 md:py-12 lg:mt-10">
           <Eyebrow>Our Vision</Eyebrow>
           <h2 className="mt-3 text-[22px] font-bold leading-[1.25] tracking-[-0.02em] text-black md:mt-4 md:text-[28px]">
             Building a Smarter and More Connected Future.
@@ -53,14 +53,13 @@ export default function PlatformsPage() {
             {footerSectors.map((sector, i) => (
               <li
                 key={sector}
-                className={`relative text-[13px] leading-5 font-light text-black md:text-sm ${
-                  i > 0 ? "ml-5 pl-5 md:ml-6 md:pl-6" : ""
-                }`}
+                className={`relative text-[13px] leading-5 font-light text-black md:text-sm ${i > 0 ? "ml-5 pl-5 md:ml-6 md:pl-6" : ""
+                  }`}
               >
                 {i > 0 && (
                   <span
                     aria-hidden
-                    className="pointer-events-none absolute -inset-y-1.5 left-0 w-px bg-linear-to-b from-transparent via-black/45 to-transparent"
+                    className="pointer-events-none absolute  left-0 w-px bg-linear-to-b from-transparent via-black/45 to-transparent"
                   />
                 )}
                 {sector}

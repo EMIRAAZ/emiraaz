@@ -1,20 +1,11 @@
-export type FeatureTone = "blue" | "green" | "orange" | "purple";
-export type FeatureIcon = "home" | "shield" | "check" | "pin";
-
-export type PlatformFeature = {
-  title: string;
-  description: string;
-  icon: FeatureIcon;
-  tone: FeatureTone;
-};
-
 export type Product = {
-  /** URL segment for /platforms/[slug]. */
+  /** Stable identifier for the product. */
   slug: string;
   name: string;
   /** Two-line tagline shown under the name. */
   tagline: [string, string];
   icon: string;
+  /** Live site or app store link; "#" means not launched yet. */
   href: string;
   /** Position on desktop (4 columns). The array order is the mobile order. */
   desktopOrder: 1 | 2 | 3 | 4;
@@ -24,11 +15,6 @@ export type Product = {
   description: string;
   /** Our Platforms page: card background tint (literal class so Tailwind generates it). */
   cardClass: string;
-  /** Platform detail page: overrides for the uppercase line and description. */
-  detailSubtitle?: string;
-  detailDescription?: string;
-  /** Platform detail page: feature tiles (copy from the design). */
-  features?: PlatformFeature[];
 };
 
 export const products: Product[] = [
@@ -43,35 +29,6 @@ export const products: Product[] = [
     description:
       "A real estate sales platform focused on helping buyers discover properties and connect with the right opportunities.",
     cardClass: "bg-[#F1F4FA]",
-    detailSubtitle: "Real Estate Buying & Selling Platform",
-    detailDescription:
-      "A real estate sales platform focused on helping buyers discover properties and connect with the right opportunities. PropertySeller offers a wide range of properties including off-plan projects, off-plan resale, secondary properties, and land across all emirates.",
-    features: [
-      {
-        title: "Wide Selection",
-        description: "Off-plan, secondary homes, and land across the UAE.",
-        icon: "home",
-        tone: "blue",
-      },
-      {
-        title: "Verified Listings",
-        description: "Accurate, vetted properties from trusted developers.",
-        icon: "shield",
-        tone: "green",
-      },
-      {
-        title: "Right Match",
-        description: "Curated options matching your goals and budget.",
-        icon: "check",
-        tone: "orange",
-      },
-      {
-        title: "All Emirates",
-        description: "Top projects across Dubai and all seven emirates.",
-        icon: "pin",
-        tone: "purple",
-      },
-    ],
   },
   {
     slug: "holidayindubai",

@@ -21,7 +21,7 @@ export default function SocialIcon({
       );
     case "linkedin":
       return (
-        <svg {...common} fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <svg {...common} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="3" y="3" width="18" height="18" rx="5" />
           <path d="M8 11v5.5" />
           <circle cx="8" cy="7.8" r="1" fill="currentColor" stroke="none" />
@@ -30,7 +30,7 @@ export default function SocialIcon({
       );
     case "youtube":
       return (
-        <svg {...common} fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round">
+        <svg {...common} fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round">
           <rect x="2.5" y="5" width="19" height="14" rx="5" />
           <path d="M10.2 9.4v5.2l4.4-2.6z" />
         </svg>

@@ -10,7 +10,7 @@ function GroupIcon({ id }: { id: PartnerGroup["id"] }) {
     viewBox: "0 0 24 24",
     fill: "none",
     stroke: "currentColor",
-    strokeWidth: 1.6,
+    strokeWidth: 1.5,
     strokeLinecap: "round" as const,
     strokeLinejoin: "round" as const,
     className: "size-6 md:size-7",
@@ -68,7 +68,7 @@ function NamedPartnerTile({ partner }: { partner: Partner }) {
               // SVG icons have no intrinsic size: give them a fixed height. Raster wordmarks shrink to fit the tile.
               partner.logo.endsWith(".svg")
                 ? "h-9 w-auto md:h-11"
-                : "h-auto max-h-9 w-auto max-w-[85%] object-contain md:max-h-11"
+                : "h-auto max-h-8 w-auto max-w-[70%] object-contain sm:max-h-9 sm:max-w-[85%] md:max-h-11"
             }
           />
         ) : (
@@ -81,7 +81,9 @@ function NamedPartnerTile({ partner }: { partner: Partner }) {
         )}
       </div>
       <p className="mt-3 text-[13px] font-semibold leading-[1.3] text-black md:text-sm">{partner.name}</p>
-      <p className="mt-0.5 text-[11px] font-light leading-[1.35] text-black/50 md:text-xs">{partner.category}</p>
+      {partner.category && (
+        <p className="mt-0.5 text-[11px] font-light leading-[1.35] text-black/50 md:text-xs">{partner.category}</p>
+      )}
     </li>
   );
 }
@@ -91,7 +93,7 @@ function PartnerTile({ partner }: { partner: Partner }) {
   return (
     <li
       className="flex h-12 items-center justify-center p-1 sm:h-16 sm:p-2"
-      title={`${partner.name} - ${partner.category}`}
+      title={partner.category ? `${partner.name} - ${partner.category}` : partner.name}
     >
       <div className="flex h-full w-full items-center justify-center opacity-40 transition-all duration-300 hover:opacity-100 hover:scale-105 active:opacity-100">
         <PartnerLogo name={partner.name} />
@@ -104,11 +106,11 @@ export default function PartnerGroups() {
   return (
     <section className="pt-10 md:pt-14">
       <Container>
-        <div className="mx-auto flex max-w-[1080px] flex-col gap-8 sm:gap-5">
+        <div className="flex-col gap-8 sm:gap-5">
           {partnerGroups.map((group, groupIndex) => (
             <div key={group.id}>
               <div
-                className="bg-transparent p-0 sm:rounded-2xl sm:bg-[#F7F8FC] sm:p-6 md:p-8"
+                className="bg-transparent p-0 sm:rounded-lg sm:bg-[#F7F8FC] mt-6 sm:p-6 md:p-8"
                 aria-labelledby={`partners-${group.id}`}
               >
                 <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between lg:gap-10">
@@ -156,7 +158,7 @@ export default function PartnerGroups() {
           ))}
 
           {/* Closing statement */}
-          <div className="mt-10 rounded-lg bg-[#F1F4FA] px-5 py-10 text-center md:mt-16 md:px-10 md:py-12">
+          <div className="mt-10 rounded-lg bg-[#F1F4FA] px-5 py-10 text-center md:mt-6 md:px-10 md:py-12">
             <Eyebrow>Our Partners</Eyebrow>
             <h2 className="mt-3 text-[clamp(22px,6.6vw,26px)] font-bold leading-[1.2] tracking-[-0.02em] text-black md:mt-4 md:text-[32px] lg:text-[36px]">
               Technology. Real Estate. Tourism.
