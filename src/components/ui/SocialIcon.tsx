@@ -32,7 +32,8 @@ export default function SocialIcon({
       return (
         <svg {...common} fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round">
           <rect x="2.5" y="5" width="19" height="14" rx="5" />
-          <path d="M10.2 9.4v5.2l4.4-2.6z" />
+          {/* Solid play triangle */}
+          <path d="M10.2 9.4v5.2l4.4-2.6z" fill="currentColor" />
         </svg>
       );
   }
